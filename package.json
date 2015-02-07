@@ -19,5 +19,9 @@
   "bugs": {
     "url": "https://github.com/erezny/syslogToKeen/issues"
   },
-  "homepage": "https://github.com/erezny/syslogToKeen"
+  "homepage": "https://github.com/erezny/syslogToKeen",
+  "dependencies": {
+    "glossy": "^0.1.7",
+    "keen-js": "^3.2.2"
+  }
 }
