@@ -1,0 +1,23 @@
+{
+  "name": "syslogToKeen",
+  "version": "1.0.0",
+  "description": "Syslog server that sends parsed messages to Keen.IO",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/erezny/syslogToKeen.git"
+  },
+  "keywords": [
+    "syslog",
+    "Keen.IO"
+  ],
+  "author": "Elliott Rezny",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/erezny/syslogToKeen/issues"
+  },
+  "homepage": "https://github.com/erezny/syslogToKeen"
+}

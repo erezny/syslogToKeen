@@ -1,0 +1,138 @@
+{
+  "title": "Example Schema",
+  "type": "object",
+  "properties": {
+    "SYSLOG-MSG": {
+      "description": "HEADER SP STRUCTURED-DATA [SP MSG]",
+      "type": "string",
+    },
+    "HEADER": {
+      "description": "PRI VERSION SP TIMESTAMP SP HOSTNAME SP APP-NAME SP PROCID SP MSGID",
+      "type": "string",
+    },
+    "PRI": {
+      "description": "\"<\" PRIVAL \">\"",
+      "type": "string",
+    },
+    "PRIVAL": {
+      "description": "1*3DIGIT ; range 0 .. 191",
+      "type": "string",
+    },
+    "VERSION": {
+      "description": "NONZERO-DIGIT 0*2DIGIT",
+      "type": "string",
+    },
+    "HOSTNAME": {
+      "description": "NILVALUE / 1*255PRINTUSASCII",
+      "type": "string",
+    },
+
+    "APP-NAME": {
+      "description": "NILVALUE / 1*48PRINTUSASCII",
+      "type": "string",
+    },
+    "PROCID": {
+      "description": "NILVALUE / 1*128PRINTUSASCII",
+      "type": "string",
+    },
+    "MSGID": {
+      "description": "NILVALUE / 1*32PRINTUSASCII",
+      "type": "string",
+    },
+
+    "TIMESTAMP": {
+      "description": "NILVALUE / FULL-DATE \"T\" FULL-TIME",
+      "type": "string",
+    },
+    "FULL-DATE": {
+      "description": "DATE-FULLYEAR \"-\" DATE-MONTH \"-\" DATE-MDAY",
+      "type": "string",
+    },
+    "DATE-FULLYEAR": {
+      "description": "4DIGIT",
+      "type": "string",
+    },
+    "DATE-MONTH": {
+      "description": "2DIGIT  ; 01-12",
+      "type": "integer",
+    },
+    "DATE-MDAY": {
+      "description": "2DIGIT  ; 01-28, 01-29, 01-30, 01-31 based on month/year",
+      "type": "integer",
+    },
+    "FULL-TIME": {
+      "description": "PARTIAL-TIME TIME-OFFSET",
+      "type": "string",
+    },
+    "PARTIAL-TIME": {
+      "description": "TIME-HOUR \":\" TIME-MINUTE \":\" TIME-SECOND [TIME-SECFRAC]",
+      "type": "string",
+    },
+    "TIME-HOUR": {
+      "description": "2DIGIT  ; 00-23",
+      "type": "integer",
+    },
+    "TIME-MINUTE": {
+      "description": "2DIGIT  ; 00-59",
+      "type": "integer",
+    },
+    "TIME-SECOND": {
+      "description": "2DIGIT  ; 00-59",
+      "type": "integer",
+    },
+    "TIME-SECFRAC": {
+      "description": "\".\" 1*6DIGIT",
+      "type": "integer",
+    },
+    "TIME-OFFSET": {
+      "description": "\"Z\" / TIME-NUMOFFSET",
+      "type": "string",
+    },
+    "TIME-NUMOFFSET": {
+      "description": "(\"+\" / \"-\") TIME-HOUR \":\" TIME-MINUTE",
+      "type": "string",
+    },
+    "STRUCTURED-DATA": {
+      "description": "NILVALUE / 1*SD-ELEMENT",
+      "type": "string",
+    },
+    "SD-ELEMENT": {
+      "description": "\"[\" SD-ID *(SP SD-PARAM) \"]\"",
+      "type": "string",
+    },
+    "SD-PARAM": {
+      "description": "PARAM-NAME \"=\" %d34 PARAM-VALUE %d34",
+      "type": "string",
+    },
+    "SD-ID": {
+      "description": "SD-NAME",
+      "type": "string",
+    },
+    "PARAM-NAME": {
+      "description": "SD-NAME",
+      "type": "string",
+    },
+    "PARAM-VALUE": {
+      "description": "UTF-8-STRING ; characters '\"', '' and ; ']' MUST be escaped.",
+      "type": "string",
+    },
+    "SD-NAME": {
+      "description": "1*32PRINTUSASCII ; except '=', SP, ']', %d34 (\")",
+      "type": "string",
+    },
+    "MSG": {
+      "description": "MSG-ANY / MSG-UTF8",
+      "type": "string",
+    },
+    "MSG-ANY": {
+      "description": "*OCTET ; not starting with BOM",
+      "type": "string",
+    },
+    "MSG-UTF8": {
+      "description": "BOM UTF-8-STRING",
+      "type": "string",
+    }
+
+  },
+  "required": ["firstName", "lastName"]
+}
