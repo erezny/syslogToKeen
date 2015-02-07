@@ -3,7 +3,7 @@ var dgram  = require("dgram");
 var server = dgram.createSocket("udp4");
 
 var Keen = require('keen-js');
-var KeenConfig = require('./config/dev.js');
+var KeenConfig = require('./config/env.js');
 
 // Configure instance. Only projectId and writeKey are required to send data.
 var keenClient = new Keen(KeenConfig);
